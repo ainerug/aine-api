@@ -21,6 +21,7 @@ return(
         <input type="text" placeholder="Grade:"/>
         <br/>
         <br/>
+        <p>Scholarship applicable?</p>
         <input type="radio" name="scholarship"/> Yes
         <br/>
         <input type="radio" name="scholarship"/> No
