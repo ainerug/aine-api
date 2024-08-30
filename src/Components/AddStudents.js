@@ -3,10 +3,12 @@ import axios from 'axios'
 import { useState,useRef } from 'react'
 import 'react-notifications/lib/notifications.css'
 import { NotificationContainer,NotificationManager } from 'react-notifications'
+import { useNavigate } from 'react-router-dom'
 
 export default function AddStudents() {
 
   const [scholarship, setScholarship] = useState();
+  const navigate = useNavigate();
 
   const studentNameRef = useRef();
   const studentAgeRef = useRef();
@@ -45,6 +47,9 @@ export default function AddStudents() {
     })
     
   }
+   const goBack=()=>{
+    navigate('/students');
+   }
 
 
 
@@ -74,7 +79,8 @@ export default function AddStudents() {
       <input type="radio" name="scholarship" value={false} onChangeCapture={handleScholarship}/> No
       <br/>
       <br/>
-      <button  className="w-[130px] h-[30px] rounded-sm bg-green-400"onClick={addStudent}>Add Student</button>
+      <button  className="w-[130px] h-[30px] rounded-sm bg-green-400 ml-2 mr-2"onClick={addStudent}>Add Student</button>
+      <button  className="w-[130px] h-[30px] rounded-sm bg-green-400"onClick={goBack}>Back</button>
       </div>
     </div>
   )

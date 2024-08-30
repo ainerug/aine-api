@@ -2,6 +2,7 @@ import React from 'react'
 import { useRef } from 'react'
 import axios from 'axios';
 import { NotificationContainer,NotificationManager } from 'react-notifications';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddRecipes() {
 
@@ -10,6 +11,7 @@ export default function AddRecipes() {
     const instructionsRef = useRef();
     const cookingTimeRef = useRef();
     const caloriesRef = useRef();
+    const navigate = useNavigate();
 
     const addRecipe=()=>{
 
@@ -29,6 +31,10 @@ export default function AddRecipes() {
             NotificationManager.error("Something went wrong!")
 
         })
+    }
+
+    const goBack=()=>{
+      navigate('/recipes')
     }
   return (
     <div className='p-6 bg-gray-100 rounded-md w-[50%] mt-10'>
@@ -51,7 +57,8 @@ export default function AddRecipes() {
         <input type="text" placeholder="Calories: "  ref={caloriesRef}className="w-full p-3 mb-4 border border-gray-300 rounded"/>
         <br/>
         <br/>
-        <button className="w-[25%] bg-green-500 text-white text-[18px] p-3 rounded" onClick={addRecipe}>Add Recipe</button>
+        <button className="w-[25%] bg-green-500 hover:bg-green-600 text-white text-[18px] p-3 rounded mr-3" onClick={addRecipe}>Add Recipe</button>
+        <button className="w-[25%] bg-green-500 hover:bg-green-600 text-white text-[18px] p-3 rounded" onClick={goBack}>Back</button>
       </div>
     </div>
   )
