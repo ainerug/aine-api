@@ -37,6 +37,7 @@ export default function AddRecipes() {
       navigate('/recipes')
     }
   return (
+    <div className="flex justify-center items-center min-h-screen bg-gray-200">
     <div className='p-6 bg-gray-100 rounded-md w-[50%] mt-10'>
       
 
@@ -60,6 +61,7 @@ export default function AddRecipes() {
         <button className="w-[25%] bg-green-500 hover:bg-green-600 text-white text-[18px] p-3 rounded mr-3" onClick={addRecipe}>Add Recipe</button>
         <button className="w-[25%] bg-green-500 hover:bg-green-600 text-white text-[18px] p-3 rounded" onClick={goBack}>Back</button>
       </div>
+    </div>
     </div>
   )
 }
